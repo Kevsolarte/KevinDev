@@ -5,22 +5,22 @@ const items = [
         type: 'Título universitario',
         title: 'Ingeniería Informática',
         date: '2019 - 2024',
-        place: 'Nombre de tu universidad',
+        place: 'Universidad Rafael Belloso Chacin',
         badgeLabel: 'Estado',
         badgeValue: 'Completado',
     },
     {
         type: 'Diplomado',
         title: 'Full Stack Developer',
-        date: 'Año del diplomado',
-        place: 'Nombre de la institución',
+        date: '2025',
+        place: 'Universidad Rafael Belloso Chacin',
         badgeLabel: 'Duración',
         badgeValue: 'X meses',
     },
     {
         type: 'Curso',
         title: 'React: De 0 a Experto',
-        date: 'Año de finalización',
+        date: '2025',
         place: 'Udemy',
         badgeLabel: 'Plataforma',
         badgeValue: 'Udemy',
@@ -36,7 +36,6 @@ function Education() {
         >
             <div className="flex flex-col items-center mb-10">
                 <div className="flex items-center gap-2 text-2xl md:text-3xl font-bold text-white">
-                    <span className="text-purple-400 text-3xl">🎓</span>
                     <span>
                         Educacion <span className="text-purple-400">y Certificados</span>
                     </span>
@@ -65,12 +64,12 @@ function Education() {
                                 {item.date}
                             </p>
 
-                            <div className="flex items-center gap-2 mt-3">
+                            {/* <div className="flex items-center gap-2 mt-3">
                                 <span className="text-purple-400 text-lg">🎓</span>
                                 <span className="text-xs md:text-sm text-purple-300 font-semibold">
                                     {item.badgeLabel}: {item.badgeValue}
                                 </span>
-                            </div>
+                            </div> */}
                         </div>
 
                         <p className="mt-5 text-xs md:text-sm text-gray-400">

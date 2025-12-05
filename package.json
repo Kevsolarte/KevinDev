@@ -12,6 +12,7 @@
   "dependencies": {
     "@babel/core": "^7.27.1",
     "@babel/preset-react": "^7.27.1",
+    "@emailjs/browser": "^4.4.1",
     "aos": "^2.3.4",
     "framer-motion": "^12.23.25",
     "react": "^18.2.0",

@@ -9,8 +9,8 @@ function About() {
             className="py-10 md:py-16"
             data-aos="fade-up"
         >
-            <div className="mb-10">
-                <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-purple-300">
+            <div className="flex flex-col items-center mb-10">
+                <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-purple-300 ">
                     Sobre mí
                 </p>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-white">

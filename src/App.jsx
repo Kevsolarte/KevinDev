@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import NavBar from './components/Navbar/NavBar.jsx';
+import NavBar from './components/NavBar.jsx';
 import Hero from './components/hero.jsx';
 import About from './components/About.jsx';
 import Education from './components/Education.jsx';

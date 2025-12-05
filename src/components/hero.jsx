@@ -2,6 +2,8 @@ import React from 'react';
 import Typewriter from './common/Typewriter.jsx';
 import fondo from '../assets/Image/v1016-b-09.jpg';
 
+const gifUrl = 'https://media1.tenor.com/m/GfSX-u7VGM4AAAAd/coding.gif';
+
 function Hero() {
   return (
     <section
@@ -16,6 +18,7 @@ function Hero() {
 
       <div className="relative z-10 w-full">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+          {/* Columna izquierda */}
           <div
             className="flex-1 flex gap-4 items-start"
             data-aos="fade-right"
@@ -57,14 +60,17 @@ function Hero() {
             </div>
           </div>
 
+          {/* Columna derecha: cuadro con GIF */}
           <div
             className="flex-1 flex justify-center"
             data-aos="fade-left"
           >
-            <div className="w-full max-w-md h-72 md:h-80 rounded-3xl bg-gradient-to-br from-purple-700/50 via-black/60 to-indigo-800/60 border border-purple-500/40 shadow-[0_0_40px_rgba(168,85,247,0.5)] flex items-center justify-center">
-              <p className="text-gray-200 text-center px-6">
-               
-              </p>
+            <div className="w-full max-w-md h-72 md:h-80 rounded-3xl bg-gradient-to-br from-purple-700/50 via-black/60 to-indigo-800/60 border border-purple-500/40 shadow-[0_0_40px_rgba(168,85,247,0.5)] flex items-center justify-center overflow-hidden">
+              <img
+                src={gifUrl}
+                alt="Gif animado de programación"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
