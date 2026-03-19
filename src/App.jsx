@@ -1,42 +1,72 @@
-import React, { useEffect } from 'react';
-import NavBar from './components/NavBar.jsx';
-import Hero from './components/hero.jsx';
-import About from './components/About.jsx';
-import Education from './components/Education.jsx';
-import Technologies from './components/Technologies.jsx';
-import Experience from './components/Experience.jsx';
-import Projects from './components/Projects.jsx';
-import Contact from './components/Contact.jsx';
-
-import 'aos/dist/aos.css';
-import AOS from 'aos';
+import React, { useEffect, useState, useCallback } from 'react';
+import Lenis from 'lenis';
+import About from './components/About'; 
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import { AnimatePresence, motion } from 'framer-motion';
 
 function App() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // duración de la animación en ms
-      once: true,     // animar solo una vez
-    });
-  }, []);
+    const [introFinished, setIntroFinished] = useState(false);
 
-   return (
-    <div className="min-h-screen bg-[#040011] text-white">
-      <NavBar />
+    const handleIntroComplete = useCallback(() => setIntroFinished(true), []);
 
-      <main className="pt-24 pb-16">
-        <Hero />
+    useEffect(() => {
+        if (!introFinished) return;
 
-        <div className="max-w-6xl mx-auto px-4 space-y-24">
-          <About />
-          <Education />
-          <Technologies />
-          <Experience />
-          <Projects />
-          <Contact />
+        // Scroll optimizado: lerp más alto = menos frames = menos lag en el carrusel horizontal
+        const lenis = new Lenis({
+            lerp: 0.08,    
+            wheelMultiplier: 1.0, 
+            touchMultiplier: 1.2,  
+            smoothWheel: true,
+            smoothTouch: false,
+            syncTouch: true,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        return () => {
+            lenis.destroy();
+        };
+    }, [introFinished]);
+
+    return (
+        <div className="bg-[#050505] text-white selection:bg-[#2563EB] selection:text-white min-h-screen">
+            <main className="relative z-10 w-full">
+                <About onIntroComplete={handleIntroComplete} />
+                
+                {/* RESTO DE SECCIONES (Ocultas hasta que termine la intro) */}
+                <AnimatePresence>
+                    {introFinished && (
+                        <motion.div 
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+                            className="relative z-10 w-full flex flex-col"
+                        >
+                            <div className="w-full max-w-[1400px] mx-auto px-4 md:px-12">
+                                <Experience />
+                            </div>
+
+                            <div className="w-full bg-[#050505]">
+                                <Projects />
+                            </div>
+
+                            <div className="w-full max-w-[1400px] mx-auto px-4 md:px-12 pt-12 pb-32">
+                                <Contact />
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </main>
         </div>
-      </main>
-    </div>
-  );
+    );
 }
 
 export default App;

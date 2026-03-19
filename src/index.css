@@ -1,16 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Sora:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  background-color: #081b29;
-  color: white;
-  font-family: sans-serif;
-} */
+@layer base {
+  :root {
+    --color-bg-deep: #050505;
+    --color-accent: #2563EB;
+    --color-grid: #1a1a1a;
+    
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'Sora', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+    background-color: var(--color-bg-deep);
+    overflow-x: clip; 
+  }
+
+  body {
+    @apply bg-[#050505] text-white antialiased;
+    font-family: var(--font-body);
+    overflow-x: clip; 
+  }
+
+  h1, h2, h3, h4 {
+    @apply uppercase tracking-tighter;
+    font-family: 'Archivo Black', sans-serif;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: white;
+  }
+}
+
+/* Efecto de Grano Cinematográfico Global */
+.grain-effect::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.grid-background {
+  background-size: 80px 80px;
+  background-image: 
+    linear-gradient(to right, #1a1a1a 1px, transparent 1px),
+    linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
+}
+
+@keyframes scan {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(1000%); }
+}
+
+.animate-scan {
+  animation: scan 3s linear infinite;
+}
+
+
 .app {
-   min-height: 100vh;           /* Que ocupe toda la pantalla */
+   min-height: 100vh;        
   background-image: url('../src/assets/Image/v1016-b-09.jpg');
-  background-size: cover;      /* Que cubra toda la pantalla */
-  background-position: center; /* Centrada */
+  background-size: cover;      
+  background-position: center; 
   background-repeat: no-repeat;
 }
