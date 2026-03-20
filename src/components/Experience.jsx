@@ -67,8 +67,8 @@ export default function Experience() {
             {/* Sticky Cards Container */}
             <div className="relative flex flex-col gap-6 md:gap-10 mb-0">
                 {experiences.map((exp, index) => {
-                    const topOffsetMobile = 24 + (index * 130); 
-                    const topOffsetDesktop = 24 + (index * 100); 
+                    const topOffsetMobile = 24; 
+                    const topOffsetDesktop = 24; 
 
                     const cardWatermark = index === 0 ? 'LEAD' : index === 1 ? 'DEV' : 'BASE';
 
@@ -79,7 +79,7 @@ export default function Experience() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-10%" }}
                             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                            className={`sticky w-full bg-[#080808] border-x border-t border-white/5 flex flex-col overflow-hidden`}
+                            className={`sticky w-full bg-[#080808] border-x border-t border-white/5 flex flex-col`}
                             style={{
                                 top: `clamp(${ topOffsetMobile }px, 15vh, ${ topOffsetDesktop }px)`,
                                 zIndex: index + 10,

@@ -128,11 +128,11 @@ export default function About({ onIntroComplete }) {
                             <div className="relative z-10 space-y-6">
                                 <div className="flex items-center gap-4 mb-2">
                                     {/* FOTO DE PERFIL */}
-                                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-none border border-white/10 bg-[#0c0c0c] flex items-center justify-center overflow-hidden shrink-0 relative group/photo">
+                                    {/* <div className="w-14 h-14 md:w-16 md:h-16 rounded-none border border-white/10 bg-[#0c0c0c] flex items-center justify-center overflow-hidden shrink-0 relative group/photo">
                                         <div className="absolute inset-0 bg-gradient-to-br from-[#2563EB]/20 to-transparent"></div>
                                         <span className="font-archivo text-lg text-white/60 tracking-widest relative z-10">KS</span>
                                         <div className="absolute bottom-0 left-0 right-0 h-px bg-[#2563EB]/40"></div>
-                                    </div>
+                                    </div> */}
                                     <div className="flex flex-col">
                                         <div className="flex items-center gap-2">
                                             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
@@ -199,12 +199,12 @@ export default function About({ onIntroComplete }) {
 
                                 <div className="grid grid-cols-2 gap-px bg-[#1a1a1a]/40 border border-[#1a1a1a]/40 flex-1">
 
-                                    <a href="/Kevin solarte cv Fullstack.pdf" download className="bg-[#080808] hover:bg-[#2563EB]/5 border-b-2 border-transparent hover:border-[#2563EB] p-4 md:p-5 flex flex-col items-start justify-between min-h-[90px] md:min-h-[110px] transition-all group duration-300">
+                                    <a href="/Kevin_Solarte.pdf" download className="bg-[#080808] hover:bg-[#2563EB]/5 border-b-2 border-transparent hover:border-[#2563EB] p-4 md:p-5 flex flex-col items-start justify-between min-h-[90px] md:min-h-[110px] transition-all group duration-300">
                                         <span className="font-mono text-[8px] md:text-[9px] text-[#2563EB] font-bold uppercase tracking-widest">// DATA_RESOURCE</span>
                                         <span className="font-archivo text-white/80 group-hover:text-white text-sm md:text-base uppercase tracking-widest mt-4">DESCARGAR CV</span>
                                     </a>
 
-                                    <a href="https://vekso.com" target="_blank" rel="noreferrer" className="bg-[#080808] hover:bg-[#2563EB]/5 border-b-2 border-transparent hover:border-[#2563EB] p-4 md:p-5 flex flex-col items-start justify-between min-h-[90px] md:min-h-[110px] transition-all group duration-300">
+                                    <a href="https://vekso.vercel.app/" target="_blank" rel="noreferrer" className="bg-[#080808] hover:bg-[#2563EB]/5 border-b-2 border-transparent hover:border-[#2563EB] p-4 md:p-5 flex flex-col items-start justify-between min-h-[90px] md:min-h-[110px] transition-all group duration-300">
                                         <span className="font-mono text-[8px] md:text-[9px] text-[#2563EB] font-bold uppercase tracking-widest flex items-center gap-2">
                                             <span className="w-1.5 h-1.5 bg-[#2563EB] rounded-full animate-[pulse_2s_infinite]"></span> // ENTERPRISE
                                         </span>

@@ -143,7 +143,7 @@ function Contact() {
                 <div className="border-t border-white/5 pt-12 pb-4 flex flex-col md:flex-row justify-between items-end gap-8">
                     <div className="space-y-4">
                         <h3 className="text-3xl md:text-5xl font-archivo font-black tracking-tighter uppercase leading-none">
-                            KEVDEV<span className="text-[#2563EB]">.</span>SYSTEMS
+                            KEVIN<span className="text-[#2563EB]">.</span>DEV
                         </h3>
                         <div className="flex gap-8 font-mono text-[9px] text-white/20 tracking-[0.3em] uppercase">
                             <span>© 2026 ALL_RIGHTS_RESERVED</span>
