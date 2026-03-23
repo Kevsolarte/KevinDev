@@ -71,7 +71,7 @@
 
 .app {
    min-height: 100vh;        
-  background-image: url('../src/assets/Image/v1016-b-09.jpg');
+  /* background-image: url('../src/assets/Image/v1016-b-09.jpg'); */
   background-size: cover;      
   background-position: center; 
   background-repeat: no-repeat;
